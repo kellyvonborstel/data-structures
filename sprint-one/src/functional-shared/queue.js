@@ -1,8 +1,26 @@
-var Queue = function(){
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
+var Queue = function() {
+  var queue = {};
+  queue.queueStart = 0;
+  queue.queueEnd = 0;
+  _.extend(queue, queueMethods);
+  return queue;
 };
 
-var queueMethods = {};
+var queueMethods = {
+  enqueue: function(value) {
+    this[this.queueEnd] = value;
+    this.queueEnd++;
+  },
 
+  dequeue: function() {
+    if (this.queueEnd - this.queueStart > 0) {
+      var value = this[this.queueStart];
+      this.queueStart++;
+      return value;
+    }
+  },
 
+  size: function() {
+    return this.queueEnd - this.queueStart;
+  }
+};
