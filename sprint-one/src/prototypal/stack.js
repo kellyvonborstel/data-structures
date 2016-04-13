@@ -13,15 +13,11 @@ var stackMethods = {
   pop: function() {
     if (this.stackSize > 0) {
       this.stackSize--;
-      var value = this[this.stackSize];
-      return value;
+      return this[this.stackSize];
     }
-
   },
 
   size: function() {
     return this.stackSize;
   }
 };
-
-
