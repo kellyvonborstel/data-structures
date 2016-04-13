@@ -1,25 +1,25 @@
 var Queue = function() {
-  var someInstance = {};
+  var queue = {};
   var storage = {};
-  var startIndex = 0;
-  var endIndex = 0;
+  var queueStart = 0;
+  var queueEnd = 0;
 
-  someInstance.enqueue = function(value) {
-    storage[endIndex] = value;
-    endIndex++;
+  queue.enqueue = function(value) {
+    storage[queueEnd] = value;
+    queueEnd++;
   };
 
-  someInstance.dequeue = function() {
-    if (endIndex - startIndex > 0) {
-      var value = storage[startIndex];
-      startIndex++;
+  queue.dequeue = function() {
+    if (queueEnd - queueStart > 0) {
+      var value = storage[queueStart];
+      queueStart++;
       return value;
     }
   };
 
-  someInstance.size = function() {
-    return endIndex - startIndex;
+  queue.size = function() {
+    return queueEnd - queueStart;
   };
 
-  return someInstance;
+  return queue;
 };

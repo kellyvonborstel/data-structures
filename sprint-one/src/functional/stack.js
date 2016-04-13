@@ -1,14 +1,14 @@
 var Stack = function() {
-  var someInstance = {};
+  var stack = {};
   var storage = {};
   var size = 0;
 
-  someInstance.push = function(value) {
+  stack.push = function(value) {
     storage[size] = value;
     size++;
   };
 
-  someInstance.pop = function() {
+  stack.pop = function() {
     if (size > 0) {
       size--;
       var value = storage[size ];
@@ -17,9 +17,9 @@ var Stack = function() {
     }
   };
 
-  someInstance.size = function() {
+  stack.size = function() {
     return size;
   };
 
-  return someInstance;
+  return stack;
 };
