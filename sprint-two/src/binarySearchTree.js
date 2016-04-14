@@ -23,17 +23,22 @@ var BinarySearchTree = function(value) {
   };
 
   tree.contains = function(value) {
-    var found = false;
     if (tree.value === value) {
       return true;
     }
-    if (value < tree.value && tree.left) {
-      found = tree.left.contains(value);
+    if (value < tree.value) {
+      if (!this.left) {
+        return false;
+      } else {
+        return this.left.contains(value);
+      }
+    } else if (value > tree.value) {
+      if (!this.right) {
+        return false;
+      } else {
+        return this.right.contains(value);
+      }
     }
-    if (value > tree.value && tree.right) {
-      found = tree.right.contains(value);
-    }
-    return found;
   };
 
   tree.depthFirstLog = function(callback) {
