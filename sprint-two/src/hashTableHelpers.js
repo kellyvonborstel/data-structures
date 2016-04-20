@@ -1,5 +1,5 @@
-//This class represents an array with limited functionality and a
-//maximum size to prevent accidentally trying to use up too much space.
+// This class represents an array with limited functionality and a
+// maximum size to prevent accidentally trying to use up too much space.
 
 // Usage:
 // limitedArray.set(3, 'hi');
@@ -38,7 +38,7 @@ var LimitedArray = function(limit) {
 };
 
 // This hashing function turns any string into an integer that is
-// well-distributed between the numbers 0 and max
+// well-distributed between the numbers 0 and max.
 var getIndexBelowMaxForKey = function(str, max) {
   var hash = 0;
   for (var i = 0; i < str.length; i++) {
